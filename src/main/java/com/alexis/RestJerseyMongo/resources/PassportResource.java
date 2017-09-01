@@ -17,13 +17,5 @@ import com.alexis.RestJerseyMongo.repository.PersonRepository;
 @Component
 public class PassportResource {
 	
-	@Autowired
-	PersonRepository personDAO;
-	
-	@GET
-	public Response.ResponseBuilder getAllPersons(){
-		return Response.ok();
-	}
-	
 	
 }
