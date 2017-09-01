@@ -9,4 +9,6 @@ public class RestJerseyMongoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RestJerseyMongoApplication.class, args);
 	}
+	
+	
 }
