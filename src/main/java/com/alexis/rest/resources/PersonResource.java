@@ -1,12 +1,12 @@
-package com.alexis.RestJerseyMongo.resources;
+package com.alexis.rest.resources;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.alexis.RestJerseyMongo.model.Person;
-import com.alexis.RestJerseyMongo.repository.PersonRepository;
+import com.alexis.rest.model.Person;
+import com.alexis.rest.repository.PersonRepository;
 
 @Path("/person")
 @Produces(MediaType.APPLICATION_JSON)
@@ -18,20 +18,20 @@ public class PersonResource {
 	PersonRepository repository;
 	
 	@GET
-	public Response.ResponseBuilder getAllPersons(){
-		return Response.ok(repository.findAll());
+	public Response getAllPersons(){
+		return Response.ok(repository.findAll()).build();
 	}
 	
 	@GET
-	@Path("/{lastName}")
-	public Response.ResponseBuilder getPersonByLastName(@PathParam("{lastName}") String lastName){
+	@Path("{lastname}")
+	public Response getPersonByLastName(@PathParam("lastname") String lastname){
 		
-		Person person = repository.findFirtByLastName(lastName);
+		Person person = repository.findPersonByLastname(lastname);
 		
 		if(person == null) {
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}else {
-			return Response.ok(person);	
+			return Response.ok(person).build();	
 		}
 		
 	}

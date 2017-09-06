@@ -1,4 +1,4 @@
-package com.alexis.RestJerseyMongo.resources;
+package com.alexis.rest.resources;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;

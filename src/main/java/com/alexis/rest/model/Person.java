@@ -1,15 +1,21 @@
-package com.alexis.RestJerseyMongo.model;
+package com.alexis.rest.model;
 
+import java.io.Serializable;
+
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Document(collection = "person")
-public class Person {
+public class Person implements Serializable {
 	
 	@Id
-	private long idPerson;
+	private ObjectId _id;
 	private String name;
-	private String lastName;
+	private String lastname;
 	private String sex;
 	private Passport passport;
 	
@@ -17,18 +23,18 @@ public class Person {
 
 	}
 	
-	public Person(String name, String lastName, String sex){
+	public Person(String name, String lastname, String sex){
 		this.name 	  = name;
-		this.lastName = lastName;
+		this.lastname = lastname;
 		this.sex 	  = sex;
 	}
 
-	public long getIdPerson() {
-		return idPerson;
+	public ObjectId get_id() {
+		return _id;
 	}
 
-	public void setId(long idPerson) {
-		this.idPerson = idPerson;
+	public void set_id(ObjectId _id) {
+		this._id = _id;
 	}
 
 	public String getName() {
@@ -39,12 +45,12 @@ public class Person {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getSex() {

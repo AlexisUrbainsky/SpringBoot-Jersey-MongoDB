@@ -1,4 +1,4 @@
-package com.alexis.RestJerseyMongo.model;
+package com.alexis.rest.model;
 
 import java.util.Date;
 

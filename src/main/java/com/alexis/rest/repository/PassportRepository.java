@@ -1,7 +1,8 @@
-package com.alexis.RestJerseyMongo.repository;
+package com.alexis.rest.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import com.alexis.RestJerseyMongo.model.Passport;
+
+import com.alexis.rest.model.Passport;
 
 public interface PassportRepository extends MongoRepository<Passport, Long> {
 	
