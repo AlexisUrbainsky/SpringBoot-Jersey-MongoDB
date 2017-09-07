@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import com.alexis.rest.model.Person;
 
-public interface PersonRepository extends MongoRepository<Person, ObjectId> {
+public interface PersonRepository extends MongoRepository<Person, ObjectId>, PersonRepositoryCustom {
 	
 	Person findFirtByLastname(String lastname);
 	
