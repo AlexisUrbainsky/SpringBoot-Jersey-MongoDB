@@ -10,7 +10,6 @@ import javax.ws.rs.core.UriInfo;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
 import com.alexis.rest.model.Person;
 import com.alexis.rest.repository.PersonRepository;
 import java.util.Optional;
@@ -26,10 +25,9 @@ public class PersonResource {
 	
 	@Autowired
 	PersonRepository repository;
-	
+
 	@Context
 	private UriInfo uriInfo;
-
 	
 	@GET
 	public Response getAllPersons(){

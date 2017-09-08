@@ -1,10 +1,10 @@
 package com.alexis.rest.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Passport {
+public class Passport implements Serializable {
 
-	private int idPassport;
 	private String nationality;
 	private Date expeditionDate;
 	private Date expirationDate;
@@ -17,14 +17,6 @@ public class Passport {
 		this.nationality 	= nationality;
 		this.expeditionDate = expeditionDate;
 		this.expirationDate = expirationDate;
-	}
-
-	public int getIdPassport() {
-		return idPassport;
-	}
-
-	public void setIdPassport(int idPassport) {
-		this.idPassport = idPassport;
 	}
 
 	public String getNationality() {

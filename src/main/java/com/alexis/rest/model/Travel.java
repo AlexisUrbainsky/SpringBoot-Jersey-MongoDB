@@ -1,19 +1,29 @@
 package com.alexis.rest.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class Travel {
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Document(collection = "travels")
+public class Travel implements Serializable {
 	
-	private int 	idTravel;
+	@Id
+	private ObjectId _id;
+	private ObjectId personId;
 	private String  purpose;
 	private Date 	startDate;
 	private Date 	endDate;
 	private Country country;
-	public int getIdTravel() {
-		return idTravel;
+	
+	public ObjectId get_id() {
+		return _id;
 	}
-	public void setIdTravel(int idTravel) {
-		this.idTravel = idTravel;
+	public void set_id(ObjectId _id) {
+		this._id = _id;
 	}
 	public String getPurpose() {
 		return purpose;
@@ -38,6 +48,12 @@ public class Travel {
 	}
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+	public ObjectId getPersonId() {
+		return personId;
+	}
+	public void setPersonId(ObjectId personId) {
+		this.personId = personId;
 	}
 	
 	//Do HashCode equals & toString methods

@@ -1,16 +1,26 @@
 package com.alexis.rest.model;
 
-public class Country {
+import java.io.Serializable;
 
-	private int 	idCountry;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Document(collection = "country")
+public class Country implements Serializable{
+
+	@Id
+	private ObjectId _id;
 	private String 	name;
 	private String 	code;
 	
-	public int getIdCountry() {
-		return idCountry;
+	public ObjectId get_id() {
+		return _id;
 	}
-	public void setIdCountry(int idCountry) {
-		this.idCountry = idCountry;
+	public void set_id(ObjectId _id) {
+		this._id = _id;
 	}
 	public String getName() {
 		return name;
