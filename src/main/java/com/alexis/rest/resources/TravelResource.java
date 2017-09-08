@@ -38,7 +38,7 @@ public class TravelResource {
 		
 		ObjectId objId = new ObjectId(id);
 		
-		List<Travel> travels = travelRepository.findTravelsByIdPassport(objId);
+		List<Travel> travels = travelRepository.findTravelsByIdPerson(objId);
 		
 		return Response.ok(travels).build();
 		

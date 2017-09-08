@@ -9,7 +9,7 @@ import com.alexis.rest.model.Travel;
 public interface TravelRepository extends MongoRepository<Travel, ObjectId> {
 
 	@Query("{'personId' : {'$gte' : {'$oid': \"50b98ed00000000000000000\"}}}")
-	public List<Travel> findTravelsByIdPassport(ObjectId id);
+	public List<Travel> findTravelsByIdPerson(ObjectId id);
 	
 }
 
